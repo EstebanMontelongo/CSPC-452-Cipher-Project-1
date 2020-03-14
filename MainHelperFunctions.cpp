@@ -147,15 +147,3 @@ void writeFile(string fileName, string &text){
 		oFile << text << endl;
 	}   
 }
-
-//=======================================================================//
-//	Description: This function converts a string to all capital letters
-//               
-//	Input: str - string that will be made into all caps
-
-//	Output: none
-//======================================================================//
-void toUpperString(string & str){
-	/* Sets users key to all caps */
-	transform(str.begin(), str.end(), str.begin(), ::toupper);
-}

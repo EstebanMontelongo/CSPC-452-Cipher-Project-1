@@ -64,12 +64,28 @@ void Vigenere::setEncryptedText(string cipherText) {
 }
 
 
+//=======================================================================//
+//	Description: This function converts a string to all capital letters
+//               
+//	Input: str - string that will be made into all caps
+
+//	Output: string which is all caps
+//======================================================================//
+string Vigenere::toUpperString(const string & str){
+	/* Sets users key to all caps */
+	string newStr = str;
+	transform(newStr.begin(), newStr.end(), newStr.begin(), ::toupper);
+	return newStr;
+}
+
 /**
  * Sets the key to use
  * @param key - the key to use
  * @return - True if the key is valid and False otherwise
  */
 bool Vigenere::setKey(const string& key) {
+	/* Sets key to all caps */
+	toUpperString(key);
 
 	/* Checks to see if each character of the key exists in the alphabet */
 	for (auto& c : key) {

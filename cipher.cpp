@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 	
 	try {
 		/* Checks for invalid number of arguements */
-		if(!validNumArgs(argc)){
+		if(validNumArgs(argc)){
 			/* Assigns values if valid number of arguments */
 			cipherName = argv[1];
 			cryptoKey = argv[2];
@@ -32,9 +32,6 @@ int main(int argc, char* argv[])
 
 		/* Attempt to find and set proper cipher */
 		findCipher(cipher, cipherName);
-
-		/* Sets key to all caps */
-		toUpperString(cryptoKey);
 
 		/* Sets cipher key*/
 		keyIsSet = cipher->setKey(cryptoKey);
@@ -58,6 +55,10 @@ int main(int argc, char* argv[])
 			else{
 				throw UNKNOWN_ERROR;
 			}
+		} 
+		else
+		{
+			throw INVALID_KEY;
 		}
 	}
 	catch (ExceptionError error) {
