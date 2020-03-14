@@ -1,6 +1,5 @@
 #include "HillCipher.h"
 
-
 /**
  * Sets the key to use
  * @param key - the key to use
@@ -8,7 +7,6 @@
  */
 bool HillCipher::setKey(const string& key)
 {
-
 	return false;
 }
 
@@ -19,8 +17,6 @@ bool HillCipher::setKey(const string& key)
  */
 string HillCipher::encrypt(const string& plaintext)
 {
-
-
 	return "";
 }
 
@@ -32,6 +28,5 @@ string HillCipher::encrypt(const string& plaintext)
 string HillCipher::decrypt(const string& cipherText)
 {
 	return "";
-
 }
 

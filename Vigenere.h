@@ -28,15 +28,17 @@ protected:
 	string alphabet_;
 	string key_;
 	string encryptedText_;
+	string plainText_;
 	unordered_map<char, int> alphaMap_;
 	unordered_map<int, char> charMap_;
 
 	void setPlainText(string plainText);
+	void setEncryptedText(string cipherText);
 	void setAlphabet(string alpha);
 	void setAlphaMap();
 	void setCharMap();
 	void setAutoKey();
-	void setEncryptedText();
+	
 	string generateAutoKey();
 	int findIndex(char c);
 	char findCharacter(int index);

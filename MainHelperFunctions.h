@@ -9,6 +9,8 @@
 #include <algorithm> 
 #include <unordered_map>
 #include <unordered_set>
+#include <fstream>
+#include <iomanip>
 
 #include "ErrorHandling.h"
 #include "Caesar.h"
@@ -27,12 +29,21 @@ using namespace std;
 * These are the implamentations of a few helper functions for main
 */
  
-/* Creating a set for all available ciphers */
-const unordred_set<string> cipherNames = { "PLF", "RTS", "RFC", "VIG", "CES", "HILL" };
+/* Creating a enum values for ciphers. */
+enum cipherValue {PLF, RTS, RFC, VIG, CES, HILL, UNKNOWN};
+
+/* Create key-value pair between string and the cipher value. */
+const unordered_map<string, cipherValue> cipherNames = { make_pair("PLF", PLF), make_pair("RTS", RTS),
+                                                         make_pair("RFC", RFC), make_pair("VIG", VIG), 
+                                                         make_pair("CES", CES),  make_pair("HILL", HILL) }; 
 
 /* Function prototypes */
-void checkNumArgs(int argc);
-void checkArgs(string &cipherName, string &ENC_DEC, string &inputFile, string &outFile);
-void setCipher(CipherInterface* cipher, string cipherName);
+bool validNumArgs(int argc);
+void findCipher(CipherInterface* &cipher, string cipherName);
+void setCipher(CipherInterface* &cipher);
+void readFile(string filename, string &text);
+void writeFile(string fileName, string &text);
+cipherValue stringToValue(string cipherName);
+void toUpperString(string & str);
 
 #endif
