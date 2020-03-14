@@ -6,7 +6,6 @@
 #include <string>
 #include <unordered_set>
 #include <vector>
-#include <algorithm> 
 #include <unordered_map>
 #include <unordered_set>
 #include <fstream>
@@ -44,6 +43,5 @@ void setCipher(CipherInterface* &cipher);
 void readFile(string filename, string &text);
 void writeFile(string fileName, string &text);
 cipherValue stringToValue(string cipherName);
-void toUpperString(string & str);
 
 #endif

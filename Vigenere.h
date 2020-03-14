@@ -2,6 +2,7 @@
 #define VIGENERE_H
 
 #include <unordered_map>
+#include <algorithm> 
 #include "ErrorHandling.h"
 #include "CipherInterface.h"
 
@@ -38,6 +39,7 @@ protected:
 	void setAlphaMap();
 	void setCharMap();
 	void setAutoKey();
+	string toUpperString(const string &str);
 	
 	string generateAutoKey();
 	int findIndex(char c);
