@@ -43,7 +43,7 @@ public:
 
 	/* The protected members */
 protected:
-
+	string _key;
 
 };
 
