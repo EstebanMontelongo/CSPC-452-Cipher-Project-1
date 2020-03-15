@@ -1,4 +1,12 @@
 #include "Caesar.h"
+<<<<<<< HEAD
+=======
+#include <string>
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <typeinfo>
+>>>>>>> 86b1c9c6f80ed012e4bb6595822950305895ab48
 
 /**
  * Sets the key to use
@@ -7,6 +15,7 @@
  */
 bool Caesar::setKey(const string& key)
 {
+<<<<<<< HEAD
 
     /* key must also be in range 0 <= key <= 25,
      * so it key length must be 1 <= key.size() <= 2 */
@@ -37,6 +46,14 @@ bool Caesar::setKey(const string& key)
 
 	key_ = keyValue;
 	return true;
+=======
+	_key = key;
+	stringstream val(_key); //converts the key into an
+	int keyint = 0;         //int to make encryption
+	val >> keyint;          //easier
+	return (typeid(keyint) == typeid(int)); //will return true if keyint is an integer false otherwise
+						// should always return true
+>>>>>>> 86b1c9c6f80ed012e4bb6595822950305895ab48
 }
 
 /**
