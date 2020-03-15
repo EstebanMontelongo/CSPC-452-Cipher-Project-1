@@ -41,7 +41,7 @@ bool Playfair::setKey(const string& key)
         /* Scans each character and check if its a digit
          * if a non digit is found return false, invalid key */
         for(auto c : key){
-            if(!isdigit(c)){
+            if(isdigit(c)){
             return false;
             }
         }
@@ -49,7 +49,7 @@ bool Playfair::setKey(const string& key)
 	createPlayfairMatrix();
     setKeyMap();
     printMatrix();
-	return false;
+	return true;
 }
 
 /**	
