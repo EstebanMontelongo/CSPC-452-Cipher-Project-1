@@ -146,4 +146,5 @@ void writeFile(string fileName, string &text){
 	else{
 		oFile << text << endl;
 	}   
+	oFile.close();
 }
