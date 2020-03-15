@@ -1,7 +1,13 @@
 #include "Playfair.h"
 
 
-
+//=======================================================================//
+//	Description: Deafult constructor.
+//
+//	Input: none
+//
+//	Output: none
+//======================================================================//
 Playfair::Playfair(){
     alphabet_ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     playfairMatrix.resize(5);
@@ -15,7 +21,7 @@ Playfair::Playfair(){
 //	Description: This function converts a string to all capital letters
 //
 //	Input: str - string that will be made into all caps
-
+//
 //	Output: string which is all caps
 //======================================================================//
 string Playfair::toUpperString(const string & str){
@@ -25,38 +31,91 @@ string Playfair::toUpperString(const string & str){
 	return newStr;
 }
 
-/**
- * Sets the key to use
- * @param key - the key to use
- * @return - True if the key is valid and False otherwise
- */
+//=======================================================================//
+//	Description: This function constructs proper key and removes necessary 
+//               letters from the alphabet(Since I == J).
+//
+//	Input: str - string that will be sanitized to in order for plarfair 
+//               to work properley.
+//	Output: string which is all caps
+//======================================================================//
+string Playfair::makeKey(const string &key){
+    string newKey;
+    unordered_set<char> exists;
+
+    // Removes repeated characters from a string
+    for(auto c: key){
+        if(exists.insert(c).second){
+            newKey.push_back(c);
+        }
+    }
+
+    /* Key contains both I and J, remove J from the string and alphabet*/
+    if(exists.find('J') != exists.end() && exists.find('I') != exists.end()){
+        alphabet_.erase(alphabet_.find_first_of('J'), 1);
+        newKey.erase(newKey.find_first_of('J'), 1);
+        cout << alphabet_ << endl;
+    }
+    /* Key contains I, remove J from the alphabet */
+    else if(exists.find('I') != exists.end()){
+        alphabet_.erase(alphabet_.find_first_of('J'), 1);
+        cout << alphabet_ << endl;
+    }
+    /* Key contains J, remove I from the alphabet */
+    else if(exists.find('J') != exists.end()){
+        alphabet_.erase(alphabet_.find_first_of('I'), 1);
+        cout << alphabet_ << endl;
+    }
+
+    return newKey;
+}
+
+//=======================================================================//
+//	Description: This function sets the key for playfiar, generates matrix
+//               and displays the matrix.
+//
+//	Input: str - string that will be made into all caps
+//
+//	Output: string which is all caps
+//======================================================================//
 bool Playfair::setKey(const string& key)
 {
-    /* key must also be in range 1 <= key.size() <= 25,
-         * so it key length must be 1 <= key.size() <= 2 */
-        if( key.size() <= 0 || key.size() >= 26){
-            return false;
-        }
+    /* key must also be in range 1 <= key.size() <= 25 */
+    if( key.size() <= 0 || key.size() >= 26){
+        return false;
+    }
 
-        /* Scans each character and check if its a digit
-         * if a non digit is found return false, invalid key */
-        for(auto c : key){
-            if(isdigit(c)){
-            return false;
-            }
+    /* Scans each character and check if its a digit
+     * if a non digit is found return false, invalid key */
+    for(auto c : key){
+        if(isdigit(c)){
+        return false;
         }
-	key_ = toUpperString(key);
+    }
+
+    /* Creates a proper key ans set it. */
+	key_ = makeKey(toUpperString(key));
+
+    /* Creates Play fair matrix */
 	createPlayfairMatrix();
+
+    /* Sets every value in matrix to its coordinates 
+     * for easy access */
     setKeyMap();
+
+    /* Displays the created matrix */
     printMatrix();
 	return true;
 }
 
-/**	
- * Encrypts a plaintext string
- * @param plaintext - the plaintext string
- * @return - the encrypted ciphertext string
- */
+
+//=======================================================================//
+//	Description: Encrypts a plaintext string
+//
+//	Input: plaintext - the plaintext string
+//
+//	Output: the encrypted ciphertext string
+//======================================================================//
 string Playfair::encrypt(const string& plaintext)
 {
     string plainText = plaintext;
@@ -90,11 +149,13 @@ string Playfair::encrypt(const string& plaintext)
     return plainText;
 }
 
-/*
- * Decrypts a string of ciphertext
- * @param cipherText - the ciphertext
- * @return - the plaintext
- */
+//=======================================================================//
+//	Description: Decrypts a string of ciphertext
+//
+//	Input: cipherText - the ciphertext
+//
+//	Output: the plaintext
+//======================================================================//
 string Playfair::decrypt(const string& ciphertext)
 {
     string cipherText = ciphertext;
@@ -113,14 +174,14 @@ string Playfair::decrypt(const string& ciphertext)
                 cipherText[i+1]  = playfairMatrix[x2][y1];
             }
             else if(y1 == y2){
-                x1 = (x1 + 1) % 5;
-                x2 = (x2 + 1) % 5;
+                x1 = (x1 - 1) % 5;
+                x2 = (x2 - 1) % 5;
                 cipherText[i] = playfairMatrix[x1][y1];
                 cipherText[i+1]  = playfairMatrix[x2][y2];
             }
             else if(x1 == x2){
-                y1 = (y1 + 1) % 5;
-                y2 = (y2 + 1) % 5;
+                y1 = (y1 - 1) % 5;
+                y2 = (y2 - 1) % 5;
                 cipherText[i] = playfairMatrix[x1][y1];
                 cipherText[i+1]  = playfairMatrix[x2][y2];
             }
@@ -128,16 +189,32 @@ string Playfair::decrypt(const string& ciphertext)
         return cipherText;
 }
 
+//=======================================================================//
+//	Description: Creates the playfair matrix key.
+//
+//	Input: none
+//
+//	Output: none
+//======================================================================//
 void Playfair::createPlayfairMatrix()
 {
-    for(unsigned int i = 0; i < key_.size(); i++) {
-        for(int j = 0; j < alphabet_.size(); j++) {
-            if(key_[i] == alphabet_[j]) {
-                alphabet_.erase(j, 1);
-            }
-        }
+    string endKey = "";
+    unordered_set<char> keySet;
+
+    for(auto c : key_){
+        keySet.insert(c);
     }
-    key_.append(alphabet_);
+
+    /* Adds only character not in key to endKey */
+    for(auto c : alphabet_){
+        if(keySet.find(c) == keySet.end()){
+            endKey.push_back(c);
+        }
+        
+    }
+
+    key_.append(endKey);
+    /* Assigns the playfair matrix. */
     int index = 0;
     for(int row = 0; row < 5; row++) {
         for(int column = 0; column < 5; column++) {
@@ -147,13 +224,13 @@ void Playfair::createPlayfairMatrix()
     }
 }
 
-
-
-/*
-* Prints the Playfair matrix
-* @param fp - the file pointer
-*/
-
+//=======================================================================//
+//	Description: Prints the Playfair matrix
+//
+//	Input: none
+//
+//	Output: none
+//======================================================================//
 void Playfair::printMatrix() {
     for(int row = 0; row < 5; row++) {
         for(int column = 0; column < 5; column++) {

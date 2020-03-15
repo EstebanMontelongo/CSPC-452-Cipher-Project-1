@@ -6,6 +6,8 @@
 #include <stdio.h>  /* For standard I/O */
 #include <stdlib.h> /* For miscellenous C functions */
 #include <unordered_map>
+#include <set>
+#include <unordered_set>
 #include <algorithm>
 #include "ErrorHandling.h"
 #include "CipherInterface.h"
@@ -24,31 +26,11 @@ class Playfair: public CipherInterface
 	public:
 
          Playfair();
-		/**
-		 * Sets the key to use
-		 * @param key - the key to use
-		 * @return - True if the key is valid and False otherwise
-		 */
+
 		virtual bool setKey(const string& key);
-
-		/**	
-		 * Encrypts a plaintext string
-		 * @param plaintext - the plaintext string
-		 * @return - the encrypted ciphertext string
-		 */
 		virtual string encrypt(const string& plaintext);
-
-		/**
-		 * Decrypts a string of ciphertext
-		 * @param ciphertext - the ciphertext
-		 * @return - the plaintext
-		 */
 		virtual string decrypt(const string& ciphertext);
 			
-		/**
-		 * Prints the Playfair matrix
-		 * @param fp - the file pointer
-		 */
 
 	/* The protected members */
 	protected:
@@ -61,6 +43,7 @@ class Playfair: public CipherInterface
 	    void createPlayfairMatrix();
 	    void printMatrix();
         void setKeyMap();
+		string makeKey(const string &key);
 
 
 

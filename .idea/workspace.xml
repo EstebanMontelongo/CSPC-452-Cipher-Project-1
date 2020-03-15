@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a275c00-446b-4067-8345-ffdaa5355c26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Playfair.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Playfair.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Playfair.o" beforeDir="false" afterPath="$PROJECT_DIR$/Playfair.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher" beforeDir="false" afterPath="$PROJECT_DIR$/cipher" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -3,6 +3,14 @@
 #include "Railfence.h"
 
 bool Railfence::setKey(const string& key) {
+
+	 /* Scans each character and check if its a digit
+     * if a non digit is found return false, invalid key */
+    for(auto c : key){
+        if(!isdigit(c)){
+        return false;
+        }
+    }
 	_key = key;
 	return true;
 }
