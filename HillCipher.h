@@ -4,6 +4,8 @@
 #include <vector>   /* For vectors */
 #include <string>   /* For C++ strings */
 #include <iostream>  /* For C++ standard I/O */
+#include <stdio.h>  /* For standard I/O */
+#include <stdlib.h> /* For miscellenous C functions */
 #include "ErrorHandling.h"
 #include "CipherInterface.h"
 
