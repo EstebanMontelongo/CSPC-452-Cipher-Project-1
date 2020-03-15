@@ -1,10 +1,26 @@
 #include "RowTransposition.h"
 
-#include <string>
-#include <iostream>
-#include <vector>
-
 bool RowTransposition::setKey(const string& key) {
+
+    /* Values must be unique number 1-9
+     * so max length is 9  */
+    if(key.size() <= 0  ||key.size() >= 10)
+    {
+        return false;
+    }
+    unordered_map<char, int> unique_set;
+    /* Searches key for none digit values */
+    for(auto c : key){
+        if(!isdigit(c)){
+            return false;
+        }
+        /* Count number of occurences of a digit
+         * if it repeats return false; must be unique values*/
+        if(unique_set[c]++ > 0){
+            return false;
+        }
+    }
+
 	_key = key;
 	return true;
 }

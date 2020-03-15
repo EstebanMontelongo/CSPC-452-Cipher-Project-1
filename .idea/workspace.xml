@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a275c00-446b-4067-8345-ffdaa5355c26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Caesar.cpp.orig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Caesar.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Caesar.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RowTransposition.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/RowTransposition.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RowTransposition.h" beforeDir="false" afterPath="$PROJECT_DIR$/RowTransposition.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RowTransposition.o" beforeDir="false" afterPath="$PROJECT_DIR$/RowTransposition.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher" beforeDir="false" afterPath="$PROJECT_DIR$/cipher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/enc.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

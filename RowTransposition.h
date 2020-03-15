@@ -5,6 +5,9 @@
 #include <string>   /* For C++ strings */
 #include <stdio.h>  /* For standard I/O */
 #include <stdlib.h> /* For miscellenous C functions */
+#include <iostream>
+#include <cctype>
+#include <unordered_map>
 #include "ErrorHandling.h"
 #include "CipherInterface.h"
 
