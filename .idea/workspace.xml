@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0a275c00-446b-4067-8345-ffdaa5355c26" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/CSPC-452-Encryption-Project/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/CSPC-452-Encryption-Project/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CSPC-452-Encryption-Project/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/CSPC-452-Encryption-Project/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Caesar.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Caesar.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Caesar.h" beforeDir="false" afterPath="$PROJECT_DIR$/Caesar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher" beforeDir="false" afterPath="$PROJECT_DIR$/cipher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plain.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Z9Eb2Nqc1IDTjyriYMpnC4Ec8w" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a275c00-446b-4067-8345-ffdaa5355c26" name="Default Changelist" comment="" />
+      <created>1584242977639</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584242977639</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

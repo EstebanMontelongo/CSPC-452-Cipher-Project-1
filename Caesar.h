@@ -4,6 +4,8 @@
 #include <vector>   /* For vectors */
 #include <string>   /* For C++ strings */
 #include <iostream>  /* For standard I/O */
+#include <sstream>
+#include <cctype>
 #include "ErrorHandling.h"
 #include "CipherInterface.h"
 
@@ -43,7 +45,7 @@ public:
 
 	/* The protected members */
 protected:
-	string _key;
+	int key_;
 
 };
 
