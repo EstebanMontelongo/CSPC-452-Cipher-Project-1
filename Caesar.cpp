@@ -1,4 +1,8 @@
 #include "Caesar.h"
+#include <string>
+#include <iostream>
+#include <vector>
+#include <sstream>
 
 /**
  * Sets the key to use
@@ -7,8 +11,11 @@
  */
 bool Caesar::setKey(const string& key)
 {
-
-	return false;
+	_key = key;
+	stringstream val(_key); //converts the key into an
+	int keyint = 0;         //int to make encryption
+	val >> keyint;          //easier
+	return true;
 }
 
 /**
@@ -18,8 +25,20 @@ bool Caesar::setKey(const string& key)
  */
 string Caesar::encrypt(const string& plaintext)
 {
+	string encryptText = "";
+	string ptext=plaintext;
+	int ptextLength = plaintext.length();
 
-	return "";
+  for (int i = 0; i<ptextLength; i++)
+  {
+    if(isupper(ptext[i])){
+	    encryptText += char(int(ptext[i]+keyint-65)%26+65);
+    }
+    else{
+	    encryptText += char(int(ptext[i]+keyint-97)%26+97);
+    }
+  }
+	return encryptText;
 }
 
 /**
@@ -29,7 +48,18 @@ string Caesar::encrypt(const string& plaintext)
  */
 string Caesar::decrypt(const string& cipherText)
 {
-	return "";
+	string decryptText = "";
+	string ctext=cipherText;
+  	int ctextLength = cipherText.length();
 
+  for (int i = 0; i<ctextLength; i++)
+  {
+    if(isupper(ctext[i])){
+	    decryptText += char(int(ctext[i]+keyint-65)%26+65);
+    }
+    else{
+	    decryptText += char(int(ctext[i]+keyint-97)%26+97);
+    }
+  }
+	return decryptText;
 }
-
