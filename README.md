@@ -1,7 +1,6 @@
 # CSPC-452-Encryption-Project
 
 Group Members:
-  //add names
   Rahin Hedayat rhedayat2@csu.fullerton.edu
   
 Programming Language: C++
