@@ -1,4 +1,5 @@
 #include "Caesar.h"
+#include <typeinfo>
 
 /**
  * Sets the key to use
@@ -36,7 +37,8 @@ bool Caesar::setKey(const string& key)
 	}
 
 	key_ = keyValue;
-	return true;
+	return (typeid(keyint) == typeid(int)); //will return true if keyint is an integer false otherwise
+						// should always return true
 }
 
 /**
@@ -47,16 +49,12 @@ bool Caesar::setKey(const string& key)
 string Caesar::encrypt(const string& plaintext)
 {
 	string encryptText = "";
-	string ptext = plaintext;
 	int ptextLength = plaintext.length();
 
-  for (int i = 0; i < ptextLength; i++)
   {
     if(isupper(ptext[i])){
-	    encryptText += char(int(ptext[i]+key_-65)%26+65);
     }
     else{
-	    encryptText += char(int(ptext[i]+key_-97)%26+97);
     }
   }
 	return encryptText;
@@ -76,10 +74,8 @@ string Caesar::decrypt(const string& cipherText)
   for (int i = 0; i<ctextLength; i++)
   {
     if(isupper(ctext[i])){
-	    decryptText += char(int(ctext[i]+key_-65)%26+65);
     }
     else{
-	    decryptText += char(int(ctext[i]+key_-97)%26+97);
     }
   }
 	return decryptText;
