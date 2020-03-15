@@ -98,6 +98,7 @@ bool Vigenere::setKey(const string& key) {
 	/* If valid key set generate auto key from users key. */
 	setAutoKey();
 	setEncryptedText(plainText_);
+
 	return true;
 }
 
