@@ -4,7 +4,7 @@
 
 bool Railfence::setKey(const string& key) {
 	_key = key;
-	return false;
+	return true;
 }
 
 string Railfence::encrypt(const string& plaintext) {

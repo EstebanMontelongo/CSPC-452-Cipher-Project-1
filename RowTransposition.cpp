@@ -6,7 +6,7 @@
 
 bool RowTransposition::setKey(const string& key) {
 	_key = key;
-	return false;
+	return true;
 }
 
 string RowTransposition::encrypt(const string& plaintext) {
