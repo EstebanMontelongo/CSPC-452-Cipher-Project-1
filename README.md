@@ -6,7 +6,7 @@ Group Members:
 Programming Language: C++
 
 how to run:
-  ./cipher <Cipher name> <Key> <ENC/DEC> <Input file> <Output file>
+  ./cipher <Cipher_name> <key<i>> <ENC/DEC> <Input_file> <Output_file>
   
 No extra credit?
 
