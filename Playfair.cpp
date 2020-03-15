@@ -34,7 +34,7 @@ bool Playfair::setKey(const string& key)
 {
     /* key must also be in range 1 <= key.size() <= 25,
          * so it key length must be 1 <= key.size() <= 2 */
-        if( 0 >= key.size() || key.size() >= 26){
+        if( key.size() <= 0 || key.size() >= 26){
             return false;
         }
 

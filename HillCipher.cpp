@@ -37,7 +37,7 @@ bool HillCipher::setKey(const string& key)
  * @param plaintext - the plaintext string
  * @return - the encrypted ciphertext string
  */
-string HillCipher::encrypt(const string& plaintext)
+string HillCipher::encrypt(const string& plainText)
 {
 	string encryptedText ="", newpText = "";
 	int l1, l2, index1=0, index2=1, newL1, newL2, temp;

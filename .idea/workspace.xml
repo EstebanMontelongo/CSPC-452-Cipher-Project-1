@@ -3,20 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0a275c00-446b-4067-8345-ffdaa5355c26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Caesar.cpp.orig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Caesar.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ErrorHandling.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HillCipher.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainHelperFunctions.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HillCipher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HillCipher.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Playfair.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Playfair.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Playfair.h" beforeDir="false" afterPath="$PROJECT_DIR$/Playfair.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Playfair.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Railfence.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RowTransposition.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vigenere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Vigenere.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vigenere.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher" beforeDir="false" afterPath="$PROJECT_DIR$/cipher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cipher.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Playfair.o" beforeDir="false" afterPath="$PROJECT_DIR$/Playfair.o" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
