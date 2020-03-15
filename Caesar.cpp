@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <typeinfo>
 
 /**
  * Sets the key to use
@@ -15,7 +16,8 @@ bool Caesar::setKey(const string& key)
 	stringstream val(_key); //converts the key into an
 	int keyint = 0;         //int to make encryption
 	val >> keyint;          //easier
-	return true;
+	return (typeid(keyint) == typeid(int)); //will return true if keyint is an integer false otherwise
+						// should always return true
 }
 
 /**
