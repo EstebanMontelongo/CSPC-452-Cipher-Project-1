@@ -16,7 +16,7 @@ bool RowTransposition::setKey(const string& key) {
         }
         /* Count number of occurences of a digit
          * if it repeats return false; must be unique values*/
-        if(unique_set[c]++ > 0){
+        if(++unique_set[c] > 1){
             return false;
         }
     }
