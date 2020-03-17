@@ -25,8 +25,7 @@ class Playfair: public CipherInterface
 	/** The public members **/
 	public:
 
-         Playfair();
-
+        Playfair();
 		virtual bool setKey(const string& key);
 		virtual string encrypt(const string& plaintext);
 		virtual string decrypt(const string& ciphertext);

@@ -54,17 +54,19 @@ string Playfair::makeKey(const string &key){
     if(exists.find('J') != exists.end() && exists.find('I') != exists.end()){
         alphabet_.erase(alphabet_.find_first_of('J'), 1);
         newKey.erase(newKey.find_first_of('J'), 1);
-        cout << alphabet_ << endl;
     }
     /* Key contains I, remove J from the alphabet */
     else if(exists.find('I') != exists.end()){
         alphabet_.erase(alphabet_.find_first_of('J'), 1);
-        cout << alphabet_ << endl;
     }
     /* Key contains J, remove I from the alphabet */
     else if(exists.find('J') != exists.end()){
         alphabet_.erase(alphabet_.find_first_of('I'), 1);
-        cout << alphabet_ << endl;
+    }
+    /* Key contains neither I or J and since I == J remove J 
+     * from the alphabet */
+    else{
+        alphabet_.erase(alphabet_.find_first_of('J'), 1);
     }
 
     return newKey;
@@ -80,21 +82,23 @@ string Playfair::makeKey(const string &key){
 //======================================================================//
 bool Playfair::setKey(const string& key)
 {
-    /* key must also be in range 1 <= key.size() <= 25 */
-    if( key.size() <= 0 || key.size() >= 26){
-        return false;
-    }
 
+    string newKey = toUpperString(key);
     /* Scans each character and check if its a digit
      * if a non digit is found return false, invalid key */
-    for(auto c : key){
+    for(auto c : newKey){
         if(isdigit(c)){
         return false;
         }
     }
 
     /* Creates a proper key ans set it. */
-	key_ = makeKey(toUpperString(key));
+	key_ = makeKey(newKey);
+
+    /* key must also be in range 1 <= key.size() <= 25 */
+    if( key_.size() <= 0 || key_.size() >= 26){
+        return false;
+    }
 
     /* Creates Play fair matrix */
 	createPlayfairMatrix();
@@ -118,7 +122,7 @@ bool Playfair::setKey(const string& key)
 //======================================================================//
 string Playfair::encrypt(const string& plaintext)
 {
-    string plainText = plaintext;
+    string plainText = toUpperString(plaintext);
     vector<int> coordinates;
     int x1, x2, y1, y2;
 	for(unsigned int i = 0; i < plainText.size() - 1; i+=2) {
@@ -158,7 +162,7 @@ string Playfair::encrypt(const string& plaintext)
 //======================================================================//
 string Playfair::decrypt(const string& ciphertext)
 {
-    string cipherText = ciphertext;
+    string cipherText = toUpperString(ciphertext);
     vector<int> coordinates;
         int x1, x2, y1, y2;
     	for(unsigned int i = 0; i < cipherText.size() - 1; i+=2) {
@@ -174,14 +178,14 @@ string Playfair::decrypt(const string& ciphertext)
                 cipherText[i+1]  = playfairMatrix[x2][y1];
             }
             else if(y1 == y2){
-                x1 = (x1 - 1) % 5;
-                x2 = (x2 - 1) % 5;
+                x1 = ((x1 - 1) >= 0) ? (x1 - 1) % 5 : 4;
+                x2 = ((x2 - 1) >= 0) ? (x2 - 1) % 5 : 4; 
                 cipherText[i] = playfairMatrix[x1][y1];
                 cipherText[i+1]  = playfairMatrix[x2][y2];
             }
             else if(x1 == x2){
-                y1 = (y1 - 1) % 5;
-                y2 = (y2 - 1) % 5;
+                y1 = ((y1 - 1) >= 0) ? (y1 - 1) % 5 : 4;
+                y2 = ((y2 - 1) >= 0) ? (y2 - 1) % 5 : 4; 
                 cipherText[i] = playfairMatrix[x1][y1];
                 cipherText[i+1]  = playfairMatrix[x2][y2];
             }
