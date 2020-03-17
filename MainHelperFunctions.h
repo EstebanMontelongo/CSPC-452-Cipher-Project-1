@@ -10,6 +10,7 @@
 #include <unordered_set>
 #include <fstream>
 #include <iomanip>
+#include <algorithm>
 
 #include "ErrorHandling.h"
 #include "Caesar.h"
