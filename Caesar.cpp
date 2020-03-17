@@ -8,23 +8,23 @@
 bool Caesar::setKey(const string& key)
 {
 
-    /* key must also be in range 0 <= key <= 25,
-     * so it key length must be 1 <= key.size() <= 2 */
-    if(key.size() == 0 || key.size() >= 3){
-        return false;
-    }
+  /* key must also be in range 0 <= key <= 25,
+    * so it key length must be 1 <= key.size() <= 2 */
+  if(key.size() == 0 || key.size() >= 3){
+      return false;
+  }
 
-    /* Scans each character and check if its a digit
-     * if a non digit is found return false, invalid key */
-    for(auto c : key){
-        if(!isdigit(c)){
-        return false;
-        }
+  /* Scans each character and check if its a digit
+    * if a non digit is found return false, invalid key */
+  for(auto c : key){
+    if(!isdigit(c)){
+      return false;
     }
+  }
 
-    /* Converts string to int */
-    istringstream iss(key);
-    int keyValue;
+  /* Converts string to int */
+  istringstream iss(key);
+  int keyValue;
 
 	iss >> keyValue;
 	if(iss.fail()){
@@ -76,10 +76,10 @@ string Caesar::decrypt(const string& cipherText)
   for (int i = 0; i<ctextLength; i++)
   {
     if(isupper(ctext[i])){
-	    decryptText += char(int(ctext[i]+key_-65)%26+65);
+	    decryptText += char(int(ctext[i]-key_-65)%26+65);
     }
     else{
-	    decryptText += char(int(ctext[i]+key_-97)%26+97);
+	    decryptText += char(int(ctext[i]-key_-97)%26+97);
     }
   }
 	return decryptText;
