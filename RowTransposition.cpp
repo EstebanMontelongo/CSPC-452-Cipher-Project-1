@@ -76,7 +76,7 @@ string RowTransposition::decrypt(const string& ciphertext) {
 	int x = 0;
 
 	while (x < numOfRows) {
-		while (y < keyLength) {
+		while (y < ctextLength) {
 			columnIndex = 0;
 			while (currentColumn != column) {
 				columnIndex++;
