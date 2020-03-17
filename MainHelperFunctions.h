@@ -43,5 +43,6 @@ void setCipher(CipherInterface* &cipher);
 void readFile(string filename, string &text);
 void writeFile(string fileName, string &text);
 cipherValue stringToValue(string cipherName);
+void toUpperString(string &str);
 
 #endif

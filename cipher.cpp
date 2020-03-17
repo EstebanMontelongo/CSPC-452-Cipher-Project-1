@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
 
 		if (keyIsSet) {
 			/* Perform encryption */
+			toUpperString(choiceEncDec);
 			if(choiceEncDec == "ENC"){
 				readFile(inputFileName, plainText);
 				cipherText = cipher->encrypt(plainText);
