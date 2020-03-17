@@ -4,7 +4,7 @@ For CSUF Cryptography with Mikael Gofman for Spring 2020
 Students:
 Daniel Pestolesi     Danpestolesi@csu.fullerton.edu
 Rahin Hedayat        rhedayat2@csu.fullerton.edu
-Esteban Montelongo       
+Esteban Montelongo   EstebanMontelongo@csu.fullerton.edu
 Kayla Nguyen         knguyen1170@csu.fullerton.edu
 
 
