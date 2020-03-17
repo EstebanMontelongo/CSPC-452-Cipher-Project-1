@@ -31,6 +31,9 @@ cipherValue stringToValue(string cipherName){
 
 	cipherValue cipherChoice = UNKNOWN;
 	
+	/* Make input all caps */
+	transform(cipherName.begin(), cipherName.end(), cipherName.begin(), ::toupper);
+	
 	/* Checks to see if user input chiper exists. */
 	if(cipherNames.find(cipherName) == cipherNames.end()){
 		/* If it doesn't exist throw exception. */
