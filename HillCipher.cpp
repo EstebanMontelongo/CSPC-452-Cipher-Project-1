@@ -23,12 +23,21 @@ bool HillCipher::setKey(const string& key)
 	// ignore comma found after each key
 	while (strstream >> i)
     {
-        hillVect.push_back(i);
-        if (strstream.peek() == ',')
-            strstream.ignore();
+		if(strstream.fail()){
+			return false;
+		}
+		else{
+			hillVect.push_back(i);
+			if (strstream.peek() == ','){
+				strstream.ignore();
+			}
+		}
+        
+            
 
 
     }
+	for(auto val : hillVect) cout << val << endl;
 	return true;
 }
 

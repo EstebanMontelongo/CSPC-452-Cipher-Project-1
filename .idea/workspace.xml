@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a275c00-446b-4067-8345-ffdaa5355c26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HillCipher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HillCipher.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cipher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cipher.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dec.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dec.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/enc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plain.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plain.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +18,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Z9Eb2Nqc1IDTjyriYMpnC4Ec8w" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FlexinFitness" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -44,7 +51,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

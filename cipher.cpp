@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 				cout << "Decrypted Text is: " << plainText << endl;
 			}
 			else{
-				throw UNKNOWN_ERROR;
+				throw INVALID_CRYPT;
 			}
 		} 
 		else
