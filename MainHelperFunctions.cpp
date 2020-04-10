@@ -31,6 +31,9 @@ cipherValue stringToValue(string cipherName){
 
 	cipherValue cipherChoice = UNKNOWN;
 	
+	/* Make input all caps */
+	transform(cipherName.begin(), cipherName.end(), cipherName.begin(), ::toupper);
+
 	/* Checks to see if user input chiper exists. */
 	if(cipherNames.find(cipherName) == cipherNames.end()){
 		/* If it doesn't exist throw exception. */
@@ -146,4 +149,17 @@ void writeFile(string fileName, string &text){
 	else{
 		oFile << text << endl;
 	}   
+	oFile.close();
+}
+
+//=======================================================================//
+//	Description: This function converts a string to all capital letters
+//
+//	Input: str - string that will be made into all caps
+//
+//	Output: none
+//======================================================================//
+void toUpperString(string & str){
+	/* Sets users key to all caps */
+	transform(str.begin(), str.end(), str.begin(), ::toupper);
 }

@@ -10,6 +10,7 @@
 #include <unordered_set>
 #include <fstream>
 #include <iomanip>
+#include <algorithm>
 
 #include "ErrorHandling.h"
 #include "Caesar.h"
@@ -43,5 +44,6 @@ void setCipher(CipherInterface* &cipher);
 void readFile(string filename, string &text);
 void writeFile(string fileName, string &text);
 cipherValue stringToValue(string cipherName);
+void toUpperString(string &str);
 
 #endif

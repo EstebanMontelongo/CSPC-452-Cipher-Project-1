@@ -4,11 +4,15 @@
 #include <vector>   /* For vectors */
 #include <string>   /* For C++ strings */
 #include <iostream>  /* For standard I/O */
+#include <sstream>
+#include <cctype>
+#include <unordered_map>
+#include <algorithm>
 #include "ErrorHandling.h"
 #include "CipherInterface.h"
 
 using namespace std;
-
+//
 /**
  * This class implements the caesar cipher.
  * The class extends the abstract class
@@ -20,31 +24,24 @@ class Caesar : public CipherInterface
 	/** The public members **/
 public:
 
-	/**
-	 * Sets the key to use
-	 * @param key - the key to use
-	 * @return - True if the key is valid and False otherwise
-	 */
+	Caesar();
 	virtual bool setKey(const string& key);
-
-	/**
-	 * Encrypts a plaintext string
-	 * @param plaintext - the plaintext string
-	 * @return - the encrypted ciphertext string
-	 */
 	virtual string encrypt(const string& plaintext);
-
-	/**
-	 * Decrypts a string of ciphertext
-	 * @param ciphertext - the ciphertext
-	 * @return - the plaintext
-	 */
 	virtual string decrypt(const string& ciphertext);
 
 	/* The protected members */
 protected:
-
-
+	string alphabet_;
+	int key_;
+	unordered_map<char, int> alphaMap_;
+	unordered_map<int, char> charMap_;
+	
+	void setAlphaMap();
+	void setCharMap();
+	int findIndex(char c);
+	char findCharacter(int index);
+	void setAlphabet(string alpha);
+	string toUpperString(const string &str);
 };
 
 #endif

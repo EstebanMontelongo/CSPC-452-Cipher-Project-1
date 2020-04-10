@@ -6,9 +6,6 @@
  */
 Vigenere::Vigenere() {
 	setAlphabet(string{ "ABCDEFGHIJKLMNOPQRSTUVWXYZ" });
-	setPlainText(string{ "PLAINTEXT" });
-	setKey(string{ "KEY" });
-	setEncryptedText(encrypt("PLAINTEXT"));
 }
 
 /**
@@ -50,7 +47,7 @@ void Vigenere::setCharMap() {
  * @return - none
  */
 void Vigenere::setPlainText(string plainText) {
-	plainText_ = plainText;
+	plainText_ = toUpperString(plainText);
 }
 
 /**
@@ -60,7 +57,7 @@ void Vigenere::setPlainText(string plainText) {
  */
 
 void Vigenere::setEncryptedText(string cipherText) {
-	encryptedText_ = cipherText;
+	encryptedText_ = toUpperString(cipherText);
 }
 
 
@@ -85,19 +82,16 @@ string Vigenere::toUpperString(const string & str){
  */
 bool Vigenere::setKey(const string& key) {
 	/* Sets key to all caps */
-	toUpperString(key);
+	string newKey = toUpperString(key);
 
 	/* Checks to see if each character of the key exists in the alphabet */
-	for (auto& c : key) {
+	for (auto& c : newKey) {
 
 		if (alphaMap_.find(c) == alphaMap_.end()) {
 			return false;
 		}
 	}
-	key_ = key;
-	/* If valid key set generate auto key from users key. */
-	setAutoKey();
-	setEncryptedText(plainText_);
+	key_ = newKey;
 	return true;
 }
 
@@ -108,7 +102,7 @@ bool Vigenere::setKey(const string& key) {
 //	Output: none
 //======================================================================//
 void Vigenere::setAutoKey() {
-	autoKey_ = generateAutoKey();
+	autoKey_ = toUpperString(generateAutoKey());
 }
 
 //=======================================================================//
@@ -169,18 +163,21 @@ char Vigenere::findCharacter(int index) {
  */
 string Vigenere::encrypt(const string& plaintext)
 {
+	/* Sets plain text */
 	setPlainText(plaintext);
+	/* Generates auto key from users key. */
+	autoKey_ = generateAutoKey();
 
-	encryptedText_ = "";
+	string encryptedText = "";
 
 	for (unsigned int i = 0; i < plainText_.size(); i++) {
 		int index = findIndex(plainText_[i]);
 		int offset = findIndex(autoKey_[i]);
 		char newChar = findCharacter((index + offset) % alphabet_.size());
-		encryptedText_.push_back(newChar);
+		encryptedText.push_back(newChar);
 	}
-
-	return encryptedText_;
+	setEncryptedText(encryptedText);
+	return encryptedText;
 }
 
 /**
@@ -190,18 +187,19 @@ string Vigenere::encrypt(const string& plaintext)
  */
 string Vigenere::decrypt(const string &cipherText)
 {
+	string plainText = "";
 	setEncryptedText(cipherText);
-
-	plainText_ = "";
+	autoKey_ = key_;
 
 	for (unsigned int i = 0; i < encryptedText_.size(); i++) {
 		int index = findIndex(encryptedText_[i]);
 		int offset = findIndex(autoKey_[i]);
 		char newChar = findCharacter((alphabet_.size() + (index - offset)) % alphabet_.size());
-		plainText_ .push_back(newChar);
+		plainText.push_back(newChar);
+		autoKey_.push_back(newChar);
 	}
+	setPlainText(plainText);
 
-	return plainText_ ;
-
+	return plainText ;
 }
 

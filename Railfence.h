@@ -43,7 +43,7 @@ public:
 	virtual string decrypt(const string& ciphertext);
 
 protected:
-
+	string _key;
 
 };
 

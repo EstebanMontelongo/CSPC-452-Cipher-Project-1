@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
 
 		if (keyIsSet) {
 			/* Perform encryption */
+			toUpperString(choiceEncDec);
 			if(choiceEncDec == "ENC"){
 				readFile(inputFileName, plainText);
 				cipherText = cipher->encrypt(plainText);
@@ -53,7 +54,7 @@ int main(int argc, char* argv[])
 				cout << "Decrypted Text is: " << plainText << endl;
 			}
 			else{
-				throw UNKNOWN_ERROR;
+				throw INVALID_CRYPT;
 			}
 		} 
 		else
